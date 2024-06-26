@@ -5,6 +5,7 @@ import (
 	"github.com/sireeshdevaraj/service-watchdog/utils"
 	"os"
 	"time"
+	"fmt"
 )
 
 func main() {
