@@ -2,10 +2,9 @@ package utils
 
 import (
 	"fmt"
-	"os"
 )
 
-func SendNotification() {
+func SendNotification(webHookUrl string) {
 	for i := 0; i < len(Service); i++ {
 		result, err := CheckStatus(Service[i])
 		if err != nil {
@@ -16,8 +15,7 @@ func SendNotification() {
 			continue
 		} else {
 			fmt.Println("The database is in-active:", Service[i])
-			WebHookUrl := os.Getenv("WebHookUrl")
-			PostToDiscord(WebHookUrl, Service[i])
+			PostToDiscord(webHookUrl, Service[i])
 		}
 	}
 }

@@ -15,7 +15,7 @@ type Embed struct {
 	Title       string    `json:"title"`
 	Description string    `json:"description"`
 	Url         string    `json:"url"`
-	Color       string    `json:"color"`
+	Color       int       `json:"color"`
 	Thumbnail   Thumbnail `json:"thumbnail"`
 }
 
@@ -24,15 +24,15 @@ type Discord struct {
 	Embeds  []Embed `json:"embeds"`
 }
 
-func PostToDiscord(WebHookUrl string, Service string) {
+func PostToDiscord(WebHookUrl string, service string) {
 	thumbnail := Thumbnail{
 		Url: "https://c.tenor.com/usccWzYPsGUAAAAC/anime-discord.gif",
 	}
 	embeds := []Embed{{
 		Title:       "Services are down, might need to restart services!! ",
-		Description: "Service Name: " + Service,
+		Description: "Service Name: " + service,
 		Url:         "https://kuuhaku.space",
-		Color:       "5758966",
+		Color:       5758966,
 		Thumbnail:   thumbnail,
 	}}
 	discordData := Discord{
