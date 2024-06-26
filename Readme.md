@@ -16,5 +16,6 @@ WebhookUrl=https://discord.com/api/webhooks/*
 go build main.go
 ./main
 ```
+![discord webhook post](image.png)
 
 Pull Requests are always welcome.
